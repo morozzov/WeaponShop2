@@ -6,4 +6,5 @@ import lombok.Data;
 public class GunDto {
     public int id;
     public String name;
+    public String gunTypeName;
 }
