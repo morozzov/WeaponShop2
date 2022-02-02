@@ -31,4 +31,24 @@ public class GunsController {
     public ArrayList<Gun> getAll() throws Exception {
         return gunsService.getAll();
     }
+
+    @GetMapping(value = "/getById/{id}")
+    public Gun getById(@PathVariable int id) throws Exception {
+        return gunsService.getById(id);
+    }
+
+    @PostMapping(value = "/insertOne")
+    public Gun insertOne(@RequestBody Gun gun) throws Exception {
+        return gunsService.insertOne(gun);
+    }
+
+    @DeleteMapping(value = "/deleteById/{id}")
+    public void deleteById(@PathVariable int id) throws Exception {
+        gunsService.deleteById(id);
+    }
+
+    @PutMapping(value = "/updateById/{id}")
+    public Gun updateById(@PathVariable int id, @RequestBody Gun gun) throws Exception {
+        return gunsService.updateById(id, gun);
+    }
 }

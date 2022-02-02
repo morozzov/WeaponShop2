@@ -20,4 +20,21 @@ public class GunsService {
     public ArrayList<Gun> getAll(){
         return (ArrayList<Gun>) gunsRepository.findAll();
     }
+
+    public Gun getById(int id) {
+        return gunsRepository.findById(id).get();
+    }
+
+    public Gun insertOne(Gun gun) {
+        return gunsRepository.saveAndFlush(gun);
+    }
+
+    public void deleteById(int id) {
+        gunsRepository.deleteById(id);
+    }
+
+    public Gun updateById(int id, Gun gun){
+        gun.id = id;
+        return gunsRepository.save(gun);
+    }
 }
