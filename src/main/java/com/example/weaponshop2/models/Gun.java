@@ -1,7 +1,12 @@
 package com.example.weaponshop2.models;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "guns")
 public class Gun {
@@ -17,7 +22,4 @@ public class Gun {
 
     @Column
     public int amount;
-
-    public Gun() {
-    }
 }
